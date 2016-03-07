@@ -14,22 +14,23 @@ class List {
 
   add (node) {
     if (this.head) {
+      let current = this.head
 
+      while(current.next) {
+        current = current.next
+      }
+      current.next = node
     } else {
-    node.next = this.head
-    this.head = node
+      this.head = node
     }
   }
 }
 
-const list = new List;
-console.log(list);
-
+const list = new List
 list.add(new Node('A'))
-console.log(list);
-
 list.add(new Node('B'))
-console.log(list);
-
 list.add(new Node('C'))
-console.log(list);
+list.add(new Node('D'))
+list.add(new Node('E'))
+list.add(new Node('F'))
+console.log(list)
